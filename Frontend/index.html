@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow | To-Do List</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <a class="brand" href="/">✳ focus<span>flow</span></a>
+        <p class="label">WORKSPACE</p>
+
+        <nav>
+            <button class="nav-item active" data-filter="all">
+                ▦ All tasks <b id="nav-all">0</b>
+            </button>
+            <button class="nav-item" data-filter="active">
+                ◷ In progress <b id="nav-active">0</b>
+            </button>
+            <button class="nav-item" data-filter="completed">
+                ✓ Completed <b id="nav-completed">0</b>
+            </button>
+        </nav>
+
+        <div class="side-note">
+            <div class="spark">✦</div>
+            <h3>Small steps.<br>Big momentum.</h3>
+            <p>One task at a time. You're doing great.</p>
+        </div>
+        <p class="side-footer">● Your personal space</p>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow" id="today-label">YOUR DAY, YOUR PACE</p>
+                <h1>Make room for <em>great things.</em></h1>
+            </div>
+            <div class="avatar">✦</div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">A LITTLE PROGRESS ADDS UP</p>
+                <h2>Let's get things done.</h2>
+                <p class="muted">Capture your thoughts. Clear your mind. Keep moving.</p>
+            </div>
+            <div class="date-chip">◷ <span id="date-label">Today</span></div>
+        </section>
+
+        <section class="stats">
+            <article class="stat total">
+                <p>Total tasks <span>▤</span></p>
+                <h2 id="total-count">0</h2>
+                <small>Everything on your list</small>
+            </article>
+            <article class="stat progress">
+                <p>In progress <span>◷</span></p>
+                <h2 id="active-count">0</h2>
+                <small>One step at a time</small>
+            </article>
+            <article class="stat done">
+                <p>Completed <span>✓</span></p>
+                <h2 id="completed-count">0</h2>
+                <small id="progress-copy">Your progress starts here</small>
+                <div class="progress-track">
+                    <span id="progress-bar"></span>
+                </div>
+            </article>
+        </section>
+
+        <section class="task-panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">YOUR TASK BOARD</p>
+                    <h2>
+                        <span id="heading-title">All tasks</span>
+                        <span id="heading-count" class="count">0</span>
+                    </h2>
+                </div>
+                <span class="spark">✳</span>
+            </div>
+
+            <form id="task-form" class="composer">
+                <span class="plus">＋</span>
+                <input
+                    id="task-input"
+                    type="text"
+                    placeholder="What would you like to get done?"
+                    maxlength="200"
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="add-button">
+                    Add task <span>↗</span>
+                </button>
+            </form>
+
+            <p id="message" class="message" role="status" aria-live="polite"></p>
+
+            <div class="list-toolbar">
+                <span id="list-caption">YOUR CHECKLIST</span>
+                <span id="remaining-label">0 tasks remaining</span>
+            </div>
+
+            <ul id="task-list"></ul>
+
+            <div id="empty-message" class="empty-state">
+                <div class="empty-icon">✓</div>
+                <h3>A fresh start.</h3>
+                <p>Your list is clear. Add a task above and make today count.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>FOCUSFLOW ✳</span>
+            <span>Progress, not perfection.</span>
+        </footer>
+    </main>
+</div>
+</body>
+</html>
